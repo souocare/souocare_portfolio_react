@@ -1,0 +1,107 @@
+.about-container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Fira Code', monospace;
+    color: #f2f2f2;
+  
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    
+        .about-left,
+        .about-right {
+          flex: 1 1 48%;
+          display: flex;
+          flex-direction: column;
+        }
+    
+        .about-left {
+          align-items: center;
+          text-align: center;
+    
+          .profile-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+          }
+    
+          .about-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #ccc;
+            text-align: justify;
+            max-width: 90%;
+          }
+        }
+    
+        .about-right {
+          align-items: center;
+    
+          .languages-carousel {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            overflow-y: auto;
+            padding: 1rem;
+            width: 90%;
+    
+            &::-webkit-scrollbar {
+              width: 6px;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+              background: #444;
+              border-radius: 4px;
+            }
+    
+            .language-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              background: #2a2a2a;
+              padding: 1rem;
+              border-radius: 10px;
+              text-align: center;
+              font-size: 0.85rem;
+              color: #f0f0f0;
+              min-height: 100px;
+    
+              .language-icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 0.5rem;
+                filter: brightness(1.2);
+              }
+    
+              span {
+                margin-top: 0.2rem;
+                font-size: 1rem;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+    
+        @media (max-width: 768px) {
+          flex-direction: column;
+    
+          .about-left,
+          .about-right {
+            width: 100%;
+          }
+    
+          .languages-carousel {
+            height: auto !important;
+            max-height: 300px;
+          }
+        }
+      }
+  }
+  
