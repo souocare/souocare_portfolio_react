@@ -1,6 +1,34 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './about.styles.scss';
 
+const getAge = () => {
+    const birthDate = new Date(1999, 8, 14); // Month is 0-based: 8 = September
+    const today = new Date();
+  
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const hasHadBirthdayThisYear =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  
+    if (!hasHadBirthdayThisYear) {
+      age -= 1;
+    }
+  
+    return age;
+  };
+
+
+    
+  const languages = [
+    { name: "Python", icon: "assets/skills/python.svg" },
+    { name: "C#", icon: "assets/skills/csharp.svg" },
+    { name: "SQL", icon: "assets/skills/sql.svg" },
+    { name: "HTML/CSS/Javascript", icon: "assets/skills/htmlcssjs.svg" },
+    { name: "Flutter/Dart", icon: "assets/skills/flutter.svg" },
+    { name: "PowerBI", icon: "assets/skills/powerbi.svg" },
+];
+  
+
 const About = () => {
     const leftRef = useRef();
     const [leftHeight, setLeftHeight] = useState(null);
@@ -10,14 +38,7 @@ const About = () => {
         setLeftHeight(leftRef.current.offsetHeight);
       }
     }, []);
-    const languages = [
-        { name: "Python", icon: "assets/skills/python.svg" },
-        { name: "C#", icon: "assets/skills/csharp.svg" },
-        { name: "SQL", icon: "assets/skills/sql.svg" },
-        { name: "HTML/CSS/Javascript", icon: "assets/skills/htmlcssjs.svg" },
-        { name: "Flutter/Dart", icon: "assets/skills/flutter.svg" },
-        { name: "PowerBI", icon: "assets/skills/powerbi.svg" },
-    ];
+
 
     return (
         <div className='about-container' id='aboutme'>
@@ -29,7 +50,7 @@ const About = () => {
                 <div className='about-left' ref={leftRef}>
                     <img src='assets/me.jpg' alt='Gonçalo Fonseca' className='profile-image' />
                     <p className='about-text'>
-                    Hi! I’m from Lisbon, Portugal. I’m a full-stack developer with experience in both backend (C#, Python, SQL) and frontend (HTML/CSS/JS, Flutter and some React), always eager to learn more. I also have some experience using PowerBI for data anaylsis and visualization.<br/>
+                    I’m a {getAge()} y/o developer from Lisbon, Portugal with experience in both backend (C#, Python, SQL) and frontend (HTML/CSS/JS, Flutter and some React), always eager to learn more. I also have some experience using PowerBI for data anaylsis and visualization.<br/>
 
                     I’m a passionate software engineer who loves building clean and scalable apps. I enjoy solving problems through code and have a strong curiosity for new technologies. Over time, I’ve worked on a variety of projects—from automation scripts in Python and database management to Web Apps and Mobile apps and data analysis tools.<br/>
 
