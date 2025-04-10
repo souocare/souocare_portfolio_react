@@ -54,7 +54,7 @@ const Landing = () => {
                     showCursor={true}
                     />
                 </h2> 
-                <a className="about-button" href="#about">
+                <a className="about-button" href="#aboutme">
                     About Me Below <span className="arrow">↓</span>
                     </a>
 

@@ -3,10 +3,17 @@ import './projects.styles.scss';
 
 const projects = [
   {
+    title: "Portfolio Website (this website)",
+    description: "This portfolio website is built using React while learning it, and showcases my projects, skills, and experiences. It serves as a platform to demonstrate my work and connect with potential employers or collaborators.",
+    repo: "https://github.com/souocare/souocare_portfolio_react",
+    previewImage: null,
+    tech: ["React"]
+  },
+  {
     title: "Real-Time Portuguese Sign Language (LGP) Translator using AI (Master's Thesis Project)",
     description: "Developed as part of my Master's thesis, this mobile application translates Portuguese Sign Language (LGP) gestures into text in real-time. It integrates Convolutional Neural Networks (CNN) and MediaPipe for gesture recognition, leveraging TensorFlow Lite for optimized mobile deployment. The project aims to foster social inclusion by facilitating communication between deaf and hearing individuals.",
     repo: "https://github.com/souocare/thesis_portuguese_sign_language",
-    previewImage: "assets/images/screenshot_app_recognition.jpg",
+    previewImage: "assets/images/screenshot_app_recognition.png",
     tech: ["Python", "TensorFlow", "MediaPipe", "Flutter", "Flask"]
   },
   {
